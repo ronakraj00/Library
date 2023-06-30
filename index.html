@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Library</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>Library App</header>
+    <div class="add_book">
+        <button class="add_book_button">Add Book</button>
+    </div>
+    <section class="card card-visibility">
+        <form onsubmit="event.preventDefault()">
+
+            <p class="form_heading">Enter the details of the Book</p>
+            
+            <label for="title">Title</label><br>
+            <input type="text" id="title"><br>
+            
+            <label for="author">Author</label><br>
+            <input type="text" id="author"><br>
+            
+            <label for="pages">Pages</label><br>
+            <input type="number" id="pages" min="0"><br>
+
+            <div class="radio-buttons">
+
+            <input type="radio" id="read" name="read" value="read">
+            <label for="read">Read</label>
+            <input type="radio" id="notread" name="read" value="not read">
+            <label for="notread">Not Read</label>
+            </div>
+
+            <div class="form_submit"><input class="form_submit_button" type="submit"></div>
+            
+        </form>
+
+    </section>
+
+    <section class="display-books-container">
+        <!-- <div class="book-card">
+            <p class="book-title">Title:</p>
+            <p class="book-author">Author:</p>
+            <p class="book-pages">Pages:</p>
+            <p class="book-read">Read:</p>
+        </div> -->
+        
+
+    </section>
+
+
+    <footer></footer>
+</body>
+</html>
