@@ -66,25 +66,6 @@ function displayBooks(){
             myLibrary.splice(e.target.id,1);
             displayBooks();
         })
-        // hasRead.appendChild(readDiv);
-        // readDiv.appendChild(readtoggle);
-        // readDiv.classList.add("read-div");
-        // readtoggle.classList.add("read-toggle");
-        // readtoggle.textContent="toggle"
-        
-        // hasRead_p.addEventListener("click",(evt)=>{
-        //     console.log("i am clicked "+evt.id);
-        //     if(myLibrary[evt.id].hasRead="read"){
-        //         myLibrary[evt.id].hasRead="not read";
-        //         displayBooks();
-        //     }
-            
-        //     if(myLibrary[evt.id].hasRead="not read"){
-        //         myLibrary[evt.id].hasRead="read";
-        //         displayBooks();
-        //     }
-            
-        // })
     }
 }
 // add book button
