@@ -9,13 +9,25 @@ const display_books_container=document.querySelector(".display-books-container")
 //array to store book objects
 let myLibrary=[];
 
-function Book(title,author,pages,hasRead){
-    this.title=title;
-    this.author=author;
-    this.pages=pages;
-    this.hasRead=hasRead;
-    this.info=function(){
-        return `${this.title} by ${this.author}, pages ${this.pages}, read ${this.hasRead}`;
+// function Book(title,author,pages,hasRead){
+//     this.title=title;
+//     this.author=author;
+//     this.pages=pages;
+//     this.hasRead=hasRead;
+//     this.info=function(){
+//         return `${this.title} by ${this.author}, pages ${this.pages}, read ${this.hasRead}`;
+//     }
+// }
+
+class Book{
+    constructor(title,author,pages,hasRead){
+        this.title=title;
+        this.author=author;
+        this.pages=pages;
+        this.hasRead=hasRead;
+    }
+    info(){
+        return `${this.title} by ${this.author}`
     }
 }
 
