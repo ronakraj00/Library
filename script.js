@@ -82,13 +82,15 @@ function displayBooks(){
 }
 // add book button
 const add_book_button=document.querySelector(".add_book_button");
-
+const formDiv=document.querySelector("#form-div")
 const card=document.querySelector(".card");
 
 add_book_button.addEventListener("click",toggleDisplayCard);
 
 function toggleDisplayCard(){
     card.classList.toggle("card-visibility");
+    formDiv.classList.toggle("form")
+
 }
 
 // form submit action
@@ -102,6 +104,9 @@ form_submit_button.addEventListener("click",()=>{
         displayBooks();
         toggleDisplayCard();
         clearform();
+    }
+    else{
+        toggleDisplayCard();
     }
 });
 
