@@ -104,7 +104,14 @@ form_submit_button.addEventListener("click", () => {
     toggleDisplayCard();
     clearform();
   } else {
+    //remove the form
     toggleDisplayCard();
+    //clear form 
+    clearform();
+    //remove any error
+    titleError.textContent = "";
+    pagesError.textContent = "";
+    authorError.textContent = "";
   }
 });
 
