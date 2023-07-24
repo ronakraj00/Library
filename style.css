@@ -170,6 +170,24 @@ body{
     backdrop-filter: blur(3px);
 }
 
+form span{
+    color: red;
+    font-size: 1rem;
+    font-weight: 800;
+    text-align: center;
+    /* border: 2px solid; */
+    width: 80%;
+    margin: 0;
+    padding: 0;
+    width: min-content;
+    background-color: white;
+    margin-left: 4px;
+}
+
+form{
+    width: 300px;
+}
+
 *{
     box-sizing: border-box;
 }
