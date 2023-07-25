@@ -13,6 +13,14 @@ const pagesError = document.querySelector("#pagesError");
 //array to store book objects
 let myLibrary = [];
 
+//retrieve local storage books
+const retrievedUserBooks=JSON.parse(localStorage.getItem("UserBooks"));
+retrievedUserBooks.forEach(book => {
+  myLibrary.push(book);
+});
+displayBooks();
+
+
 //
 const transitionInterval = 400;
 // function Book(title,author,pages,hasRead){
@@ -40,6 +48,7 @@ class Book {
 function addBookToLibrary(title, author, pages, hasRead) {
   let newBook = new Book(title, author, pages, hasRead);
   myLibrary.push(newBook);
+  localStorage.setItem("UserBooks", JSON.stringify(myLibrary));
 }
 
 // display books
@@ -78,6 +87,7 @@ function displayBooks() {
 
     deleteCardButton.addEventListener("click", (e) => {
       myLibrary.splice(e.target.id, 1);
+      localStorage.setItem("UserBooks", JSON.stringify(myLibrary));
       displayBooks();
     });
   }
