@@ -31,7 +31,6 @@ header{
 }
 .card{
     width:fit-content;
-    
     border: 4px solid var(--primary-color);
     border-radius: 6px;
     margin:0px 20px;
@@ -51,8 +50,9 @@ input{
     margin-bottom:10px;
     margin-left: 12px;
     border-radius: 3px;
-    height: 26px;
+    height: max-content;
     width: 85%;
+    outline: none;
 }
 
 .radio-buttons input{
@@ -73,7 +73,7 @@ label[for="read"],label[for="notread"]{
 .form_submit_button,.add_book_button{
     padding: 8px;
     width: 50%;
-    height: 40px;
+    height: max-content;
     color:white;
     background-color: var(--primary-color);
     border:0px;
@@ -82,12 +82,17 @@ label[for="read"],label[for="notread"]{
     box-shadow:var(--card-shadow);
 }
 
-.form_submit_button:hover,.add_book_button:hover{
-    transform: scale(1.06);
+.zoom-out{
+    transform: scale(25) rotate(50deg);
+    transition: transform 400ms ease-in-out;
 }
 
 input:hover,input:active{
     border: 3px solid var(--primary-color);
+}
+
+input:invalid{
+    border: 2px solid red;
 }
 
 .card{
@@ -102,9 +107,11 @@ input:hover,input:active{
 /* add book button */
 
 .add_book_button{
-    width: 100px;
+    width:max-content;
     margin: 20px;
     cursor: pointer;
+    text-align: center;
+    height: fit-content;
 }
 
 /* display book cards  */
@@ -157,17 +164,20 @@ body{
     margin: 0;
     padding: 0;
     background:rgba(124, 255, 248, 0.138);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
 }
 
 .form{
     width: 100vw;
-    height: 100vh;
-    position: absolute;
+    height: 100%;
+    position: fixed;
     top: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    backdrop-filter: blur(3px);
+    backdrop-filter: blur(25px);
 }
 
 form span{
@@ -190,4 +200,35 @@ form{
 
 *{
     box-sizing: border-box;
+}
+
+
+footer{
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: 30px;
+}
+
+@media only screen and (max-width:500px) {
+    *{
+        font-size: 1.2rem;
+    }
+
+    header{
+        font-size: 1rem;
+        position: fixed;
+        backdrop-filter: blur(25px);
+        width: 100%;
+        border-radius: 3px;
+    }
+
+    .book-card{
+        width: 100%;
+    }
+
+    .add_book{
+        display: flex;
+        justify-content: center;
+        margin-top:20px ;
+    }
 }

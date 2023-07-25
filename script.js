@@ -13,6 +13,8 @@ const pagesError = document.querySelector("#pagesError");
 //array to store book objects
 let myLibrary = [];
 
+//
+const transitionInterval = 400;
 // function Book(title,author,pages,hasRead){
 //     this.title=title;
 //     this.author=author;
@@ -85,7 +87,13 @@ const add_book_button = document.querySelector(".add_book_button");
 const formDiv = document.querySelector("#form-div");
 const card = document.querySelector(".card");
 
-add_book_button.addEventListener("click", toggleDisplayCard);
+add_book_button.addEventListener("click", () => {
+  add_book_button.classList.add("zoom-out");
+
+  setTimeout(() => {
+    toggleDisplayCard();
+  }, transitionInterval);
+});
 
 function toggleDisplayCard() {
   card.classList.toggle("card-visibility");
@@ -97,16 +105,19 @@ function toggleDisplayCard() {
 const form_submit_button = document.querySelector(".form_submit_button");
 
 form_submit_button.addEventListener("click", () => {
+  add_book_button.classList.remove("zoom-out");
   if (title.value != "") {
     let hasReadValue = hasRead[0].checked ? hasRead[0].value : hasRead[1].value;
     addBookToLibrary(title.value, author.value, pages.value, hasReadValue);
     displayBooks();
+
     toggleDisplayCard();
+
     clearform();
   } else {
     //remove the form
     toggleDisplayCard();
-    //clear form 
+    //clear form
     clearform();
     //remove any error
     titleError.textContent = "";
