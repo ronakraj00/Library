@@ -15,10 +15,12 @@ let myLibrary = [];
 
 //retrieve local storage books
 const retrievedUserBooks=JSON.parse(localStorage.getItem("UserBooks"));
-retrievedUserBooks.forEach(book => {
-  myLibrary.push(book);
-});
-displayBooks();
+if(retrievedUserBooks){
+  retrievedUserBooks.forEach(book => {
+    myLibrary.push(book);
+  });
+  displayBooks();
+}
 
 
 //
