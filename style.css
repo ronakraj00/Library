@@ -79,7 +79,11 @@ label[for="read"],label[for="notread"]{
     border:0px;
     border-radius: 10px;
     font-weight: 600;
+     
     box-shadow:var(--card-shadow);
+}
+.form_submit_button{
+    --card-shadow:-4px 4px 40px black;
 }
 
 .zoom-out{
@@ -97,7 +101,8 @@ input:invalid{
 
 .card{
     box-shadow: var(--card-shadow);
-    background: url(form-bg.avif);
+    /* background: url(form-bg.avif); */
+    box-shadow: -4px 4px 40px ;
 }
 
 .radio-buttons{
@@ -211,11 +216,11 @@ footer{
 
 @media only screen and (max-width:500px) {
     *{
-        font-size: 1.2rem;
+        font-size: xx-large;
     }
 
     header{
-        font-size: 1rem;
+        font-size: xx-large;
         position: fixed;
         backdrop-filter: blur(25px);
         width: 100%;
