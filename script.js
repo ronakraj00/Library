@@ -88,11 +88,12 @@ const formDiv = document.querySelector("#form-div");
 const card = document.querySelector(".card");
 
 add_book_button.addEventListener("click", () => {
-  add_book_button.classList.add("zoom-out");
-
-  setTimeout(() => {
-    toggleDisplayCard();
-  }, transitionInterval);
+  // add_book_button.classList.add("zoom-out");
+  display_books_container.style.display = "none";
+  toggleDisplayCard();
+  // setTimeout(() => {
+  //   toggleDisplayCard();
+  // }, transitionInterval);
 });
 
 function toggleDisplayCard() {
@@ -105,7 +106,8 @@ function toggleDisplayCard() {
 const form_submit_button = document.querySelector(".form_submit_button");
 
 form_submit_button.addEventListener("click", () => {
-  add_book_button.classList.remove("zoom-out");
+  // add_book_button.classList.remove("zoom-out");
+  display_books_container.style.display = "flex";
   if (title.value != "") {
     let hasReadValue = hasRead[0].checked ? hasRead[0].value : hasRead[1].value;
     addBookToLibrary(title.value, author.value, pages.value, hasReadValue);
