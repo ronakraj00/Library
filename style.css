@@ -234,6 +234,6 @@ footer{
     .add_book{
         display: flex;
         justify-content: center;
-        margin-top:20px ;
+        margin-top:40px;
     }
 }
